@@ -1,0 +1,2 @@
+CLEARDB connection
+mysql://b5828ff44694aa:e44a300c@us-cdbr-east-06.cleardb.net/heroku_e4590b559117526?reconnect=true

@@ -1,0 +1,22 @@
+<form>
+                        <div className="mb-3">
+                            <label htmlFor="username" className="form-label">Username</label>
+                            <input type="test" className="form-control" id="username" onChange={(e)=>setUname(e.target.value)} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email</label>
+                            <input type="email" className="form-control" id="email" onChange={(e)=>setUemail(e.target.value)/>
+                        </div>
+                        <div className="mb-3 form-check">
+                            <label htmlFor="password" className="form-label">Password</label>
+                            <input type="password" className="form-control" id="password" onChange={(e) => setUpassword(e.target.value)/>
+                        </div>
+                        <button onClick={e => submit(e)} className="btn btn-primary">Register</button>
+</form>
+
+<div className="container mt-5">
+    <div className="card">
+        <div className="card-body">
+        </div>
+    </div>
+</div>
