@@ -23,10 +23,10 @@ const Note = () => {
                {data === [] ? (<div><span>No notes added!</span></div>)
                :
                data.map(e => (
-                    <div className="card" style={{width: '18rem', background: 'rgba(0,0,0,.04', margin: '.2rem' }} key={e.NoteID}>
-                        <h5 className="card-title">{e.Title}</h5>
-                        <span style={{fontSize: '0.9rem'}} className="card-subtitle mb2 text-muted">{e.Date}</span>
-                        <p className="card-text">{e.Note}</p>
+                    <div className="card" style={{width: '18rem', background: 'rgba(0,0,0,.04', margin: '.2rem' }} key={e.noteID}>
+                        <h5 className="card-title">{e.title}</h5>
+                        <span style={{fontSize: '0.9rem'}} className="card-subtitle mb2 text-muted">{e.date}</span>
+                        <p className="card-text">{e.note}</p>
                     </div>
                     )
                 )

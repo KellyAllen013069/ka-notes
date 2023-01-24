@@ -25,7 +25,7 @@ const Nav = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="d-flex flex-row">
                 <div className='p-2'><span className=''><h2>Note Taker</h2></span></div>
-                {logged ?
+                 {logged ?
                 (<>
                 <div className="p-2">
                             <span className="nav-link">User is: {user}</span>
@@ -47,8 +47,8 @@ const Nav = () => {
                 <div className="p-2">
                                 <Link className="nav-link" to='/login'>Login</Link>
                 </div>
-                </>
-                }
+                 </>
+                } 
             </div>
         </nav>
         

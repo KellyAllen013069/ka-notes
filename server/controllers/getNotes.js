@@ -14,14 +14,15 @@ const getNotes = (req, res) => {
             return id
         }
     })
+    console.log("*********in getnotes***********");
     console.log("user is " + user);
     if (user == null) return res.json({status: 0})
-    db.query('SELECT * FROM Notes WHERE UserID = ?', [user.id], (err, result) => {
+    db.query('SELECT * FROM notes WHERE userID = ?', [user.id], (err, result) => {
         if(err) throw err
 
-        result.forEach((e) => {
+        /* result.forEach((e) => {
             e.Note = e.Note.toString();
-        })
+        }) */
             
         return res.json(result)
     })

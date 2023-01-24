@@ -4,13 +4,14 @@ const db = require('../routes/db-config');
 
 const login = async (req, res) => {
     const {username,email,password} = req.body;
-    console.log("email is " + email);
-    db.query('SELECT * FROM Users WHERE Email = ?', [email], async (stop, chkuser) => {
+    console.log("*******EMAIL IS******** " + email);
+    db.query('SELECT * FROM users WHERE email = ?', [email], async (stop, chkuser) => {
         if (stop) throw stop;
-        if (!chkuser[0] || !await bcrypt.compare(password, chkuser[0].Password)) return res.json({
+        if (!chkuser[0] || !await bcrypt.compare(password, chkuser[0].password)) return res.json({
             status:0,
             message: 'User is not registered!'})
-            const token = jwt.sign({id:chkuser[0].UserID}, process.env.JWT_SECRET, {
+            console.log("***********CREATING TOKEN***********")
+            const token = jwt.sign({id:chkuser[0].userID}, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES
         })
         const cookieOption = {
