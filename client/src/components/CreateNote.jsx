@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import {userContext} from "./Home";
-import {settings} from "../config/settings.json"
+import settings from "../config/settings.json"
 
 
 const CreateNote = () => {
@@ -25,7 +25,7 @@ const CreateNote = () => {
         e.preventDefault();
         if (title.length<3 || note.length<10) return sendMessage('Please fill out the form!')
 
-        fetch(`${settings.domain}/api/createNote', 
+        fetch(`${settings.domain}/api/createNote`, 
         { method: 'POST',
             body: JSON.stringify({title, note}),
             headers: {'Content-Type': 'application/json'}

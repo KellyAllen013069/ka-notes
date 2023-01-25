@@ -7,7 +7,7 @@ import settings from "../config/settings.json"
     const [password, setPassword] = useState('');
     const [atype, setAtype] = useState('');
     const [message, setMessage] = useState("");
-    u
+    
     
     const sendMessage = (text, type='danger', time = 5) => {
         setAtype(type); setMessage(text);

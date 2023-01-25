@@ -8,7 +8,7 @@ const Note = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         setIsLoading(true)
-        fetch(`${settings.domain}/api/getNotes')
+        fetch(`${settings.domain}/api/getNotes`)
         .then(res =>res.json())
         .then(retdata => {
                 console.log(retdata)
