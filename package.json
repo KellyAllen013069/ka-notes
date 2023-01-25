@@ -1,4 +1,11 @@
 {
+    "name": "ka-notes",
+    "description": "simple app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "19.4.0"
+      },
+
   "dependencies": {
     "express": "^4.18.2",
     "node": "^19.4.0"
