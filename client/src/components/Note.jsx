@@ -1,5 +1,6 @@
 import {memo, useContext, useEffect, useState} from "react";
 import {userContext} from "./Home";
+import settings from "../config/settings.json"
 
 const Note = () => {
     const {noteUpdate} = useContext(userContext);
@@ -7,7 +8,7 @@ const Note = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         setIsLoading(true)
-        fetch("api/getNotes")
+        fetch(`${settings.domain}/api/getNotes')
         .then(res =>res.json())
         .then(retdata => {
                 console.log(retdata)

@@ -17,11 +17,20 @@ app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
   })
-const PORT = 5001;
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})
+
+app.set( 'port', (process.env.PORT || 5000));
+
 console.log("db is " + db);
 
 db.connect();
 console.log("CONNECTED");
 
 
-app.listen(5001)
+app.listen(app.get('port'), function() {
+  console.log("Node server running on port " + app.get('port'));
+})

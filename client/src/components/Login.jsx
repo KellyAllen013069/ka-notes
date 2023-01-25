@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import settings from "../config/settings.json"
 
     const Login = () => {
     const[username, setUsername] = useState('');
@@ -6,6 +7,7 @@ import { useReducer, useState } from "react";
     const [password, setPassword] = useState('');
     const [atype, setAtype] = useState('');
     const [message, setMessage] = useState("");
+    u
     
     const sendMessage = (text, type='danger', time = 5) => {
         setAtype(type); setMessage(text);
@@ -18,7 +20,7 @@ import { useReducer, useState } from "react";
     const submit = e => {
         e.preventDefault();
         if(email.length < 3 || password.length < 3) return sendMessage('Please fill out form correctly');
-        fetch('api/login', {
+        fetch(`${settings.domain}/api/login`, {
             method: 'POST',
             body: JSON.stringify({username, email, password}),
             headers: {'Content-Type': 'application/json'}
