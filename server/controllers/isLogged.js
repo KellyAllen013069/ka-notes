@@ -20,7 +20,7 @@ const isLogged = (req, res) => {
     console.log("**********USER ID IS " + [user.id]);
     db.query('SELECT * FROM users WHERE userID = ?', [user.id], (err, result) => {
         if (err) return res.json({status: 0, message: "Not finding id"});
-        console.log("USER IS " + result[0].email)
+        console.log("********USER IS " + result[0].email)
         return res.json({status: 1, message: "User found", user: result[0].email })
     })
 }
