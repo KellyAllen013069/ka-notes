@@ -23,7 +23,7 @@ const Register = () => {
         if(email.length < 3 || password.length < 3) return sendMessage('Please fill out form correctly');
         fetch('api/register', {
             method: 'POST',
-            body: JSON.stringify({username, email, password}),
+            body: JSON.stringify({name, email, password}),
             headers: {'Content-Type': 'application/json'}
         })
         .then ((res)=> res.json())
@@ -43,7 +43,7 @@ const Register = () => {
                     <div className="card-body">
                         <form>
                             <div className="mb-3">
-                                <label htmlFor="username" className="form-label">Username</label>
+                                <label htmlFor="name" className="form-label">Username</label>
                                 <input type="test" className="form-control" id="name" onChange={(e)=>setName(e.target.value)} />
                             </div>
                             <div className="mb-3">
