@@ -2,10 +2,9 @@
   "name" : "ka-notes",
   "description": "basic note app",
   "version": "1.0.0",
-  "scripts": {
-    "start": "nodemon",
+  "main": "./server/index.js",
+    "start": "cd server && nodemon",
     "install-client": "cd client && npm install && npm run build && cd ..",
     "install-server": "cd server && npm install && cd .. ",
     "heroku-postbuild": "npm run install-client && npm run install-server"
-}
 }
