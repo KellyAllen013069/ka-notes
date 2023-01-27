@@ -1,9 +1,11 @@
 {
-  "dependencies": {
-    "express": "^4.18.2",
-    "node": "^19.4.0"
-  },
+  "name" : "ka-notes",
+  "description": "basic note app",
+  "version": "1.0.0",
   "scripts": {
-    "start": "set PORT=3000"
-  }
+    "start": "npm start --prefix server",
+    "install-client": "cd client && npm install && npm run build && cd ..",
+    "install-server": "cd server && npm install && cd .. ",
+    "heroku-postbuild": "npm run install-client && npm run install-server"
+}
 }
