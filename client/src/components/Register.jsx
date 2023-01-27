@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 const Register = () => {
-    const[username, setUsername] = useState('');
+    const[name, setName] = useState('');
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [atype, setAtype] = useState('');
@@ -44,7 +44,7 @@ const Register = () => {
                         <form>
                             <div className="mb-3">
                                 <label htmlFor="username" className="form-label">Username</label>
-                                <input type="test" className="form-control" id="username" onChange={(e)=>setUsername(e.target.value)} />
+                                <input type="test" className="form-control" id="name" onChange={(e)=>setName(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email</label>
