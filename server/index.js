@@ -5,6 +5,7 @@ const cookie = require('cookie-parser');
 const controllers = require('./controllers/app')
 const cors = require('cors');
 const morgan = require('morgan');
+const {join} = require('path');
 
 const app = express();
 app.use(cors())
