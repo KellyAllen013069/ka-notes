@@ -13,15 +13,18 @@ app.use(express.json());
 app.use(cookie());
 app.use('/api', controllers);
 
+app.use(express.static(join(__dirname, "../client/build")));
+
+
 app.use((req, res, next) => {
-    console.log(req.path, req.method)
+  res.sendFile(join(__dirname, "../client/build/index.html"));
     next()
   })
-const PORT = 5001;
+const PORT = process.env.PORT || 5000;
 console.log("db is " + db);
 
 db.connect();
 console.log("CONNECTED");
 
 
-app.listen(5001)
+app.listen(PORT)
