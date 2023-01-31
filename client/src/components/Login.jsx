@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 
     const Login = () => {
-    const[username, setUsername] = useState('');
+    const[name, setName] = useState('');
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [atype, setAtype] = useState('');
@@ -20,7 +20,7 @@ import { useReducer, useState } from "react";
         if(email.length < 3 || password.length < 3) return sendMessage('Please fill out form correctly');
         fetch('api/login', {
             method: 'POST',
-            body: JSON.stringify({username, email, password}),
+            body: JSON.stringify({name, email, password}),
             headers: {'Content-Type': 'application/json'}
         })
         .then ((res)=> res.json())
@@ -40,8 +40,8 @@ import { useReducer, useState } from "react";
                     <div className="card-body">
                         <form>
                             <div className="mb-3">
-                                <label htmlFor="username" className="form-label">Username</label>
-                                <input type="test" className="form-control" id="username" onChange={(e)=>setUsername(e.target.value)} />
+                                <label htmlFor="name" className="form-label">Username</label>
+                                <input type="test" className="form-control" id="name" onChange={(e)=>setUsername(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email</label>

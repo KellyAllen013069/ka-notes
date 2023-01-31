@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const db = require('../routes/db-config');
 
 const login = async (req, res) => {
-    const {username,email,password} = req.body;
+    const {name,email,password} = req.body;
     console.log("*******EMAIL IS******** " + email);
     db.query('SELECT * FROM users WHERE email = ?', [email], async (stop, chkuser) => {
         if (stop) throw stop;
