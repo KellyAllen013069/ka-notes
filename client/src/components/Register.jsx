@@ -1,4 +1,5 @@
 import { useState } from "react";
+import settings from "../config/settings.json"
 
 
 
@@ -21,7 +22,7 @@ const Register = () => {
     const submit = e => {
         e.preventDefault();
         if(email.length < 3 || password.length < 3) return sendMessage('Please fill out form correctly');
-        fetch('api/register', {
+        fetch(`${settings.domain}api/register`, {
             method: 'POST',
             body: JSON.stringify({name, email, password}),
             headers: {'Content-Type': 'application/json'}

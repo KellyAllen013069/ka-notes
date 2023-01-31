@@ -1,13 +1,14 @@
 
 import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import settings from "../config/settings.json"
 
 const Nav = () => {
     const [logged, status] = useState(false);
     const [user, setUser] = useState('');
 
     useEffect(() => {
-        fetch('api/isLogged')
+        fetch(`${settings.domain}/api/isLogged`)
         .then(res => res.json())
          .then(data => {
             if(data.status) { 
