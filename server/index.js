@@ -23,25 +23,14 @@ app.use((req, res, next) => {
   })
 <<<<<<< HEAD
 const PORT = process.env.PORT || 5000;
-=======
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
-})
 
 app.set( 'port', (process.env.PORT || 5000));
 
->>>>>>> 87799e11e9b814fc2cb76e70fc6721ff83787865
 console.log("db is " + db);
 
 db.connect();
 console.log("CONNECTED");
 
-
-<<<<<<< HEAD
-app.listen(PORT)
-=======
 app.listen(app.get('port'), function() {
   console.log("Node server running on port " + app.get('port'));
 })

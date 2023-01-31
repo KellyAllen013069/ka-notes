@@ -1,8 +1,6 @@
 import Note from './Note';
 
 const ShowNotes = () => {
-
-
     
     return (
             <div className="card mt-5">    
