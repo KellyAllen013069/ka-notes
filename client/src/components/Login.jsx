@@ -41,7 +41,7 @@ import { useReducer, useState } from "react";
                         <form>
                             <div className="mb-3">
                                 <label htmlFor="name" className="form-label">Username</label>
-                                <input type="test" className="form-control" id="name" onChange={(e)=>setUsername(e.target.value)} />
+                                <input type="test" className="form-control" id="name" onChange={(e)=>setName(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email</label>
